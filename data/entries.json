@@ -1,0 +1,52 @@
+[
+    {
+        "id": "5c428ac3-0de5-491f-82b6-62b771b444fa",
+        "date": "2026-03-25",
+        "score": 4,
+        "emotions": [
+            "Tired",
+            "Stressed"
+        ],
+        "note": ""
+    },
+    {
+        "id": "c6ed8384-b149-44a3-b3f3-a78b2c7164e8",
+        "date": "2026-03-26",
+        "score": 8,
+        "emotions": [
+            "Calm",
+            "Productive"
+        ],
+        "note": ""
+    },
+    {
+        "id": "79efa650-e467-4a41-bcd1-c8f76f738c56",
+        "date": "2026-03-27",
+        "score": 6,
+        "emotions": [
+            "Calm"
+        ],
+        "note": ""
+    },
+    {
+        "id": "3d0fdc81-c09f-4d49-ae04-6eab6e60018b",
+        "date": "2026-03-28",
+        "score": 2,
+        "emotions": [
+            "Sad",
+            "Stressed"
+        ],
+        "note": ""
+    },
+    {
+        "id": "8e483bfb-70cc-48e8-aae6-ed2104a1f015",
+        "date": "2026-03-29",
+        "score": 9,
+        "emotions": [
+            "Joyful",
+            "Calm",
+            "Productive"
+        ],
+        "note": ""
+    }
+]

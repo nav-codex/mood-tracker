@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Minimalist Mood Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="blob-bg"></div>
+    <div class="container">
+        <header>
+            <h1>Aura.</h1>
+            <p>Track your mind, find your patterns.</p>
+        </header>
+
+        <main class="grid">
+            <section class="card form-card">
+                <h2>Daily Check-in</h2>
+                <form id="moodForm">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="score">How are you feeling?</label>
+                        <div class="slider-container">
+                            <input type="range" id="score" name="score" min="1" max="10" value="7" step="1">
+                            <span id="scoreValue" class="score-display">7</span>
+                        </div>
+                        <div class="slider-labels">
+                            <span>Awful</span>
+                            <span>Amazing</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Emotions</label>
+                        <div class="tags-container" id="emotionsContainer">
+                            <button type="button" class="tag" data-val="Joyful">Joyful</button>
+                            <button type="button" class="tag" data-val="Calm">Calm</button>
+                            <button type="button" class="tag" data-val="Anxious">Anxious</button>
+                            <button type="button" class="tag" data-val="Sad">Sad</button>
+                            <button type="button" class="tag" data-val="Angry">Angry</button>
+                            <button type="button" class="tag" data-val="Tired">Tired</button>
+                            <button type="button" class="tag" data-val="Productive">Productive</button>
+                            <button type="button" class="tag" data-val="Stressed">Stressed</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note">Notes (Optional)</label>
+                        <textarea id="note" name="note" placeholder="What's on your mind today?" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Save Entry</button>
+                </form>
+            </section>
+
+            <section class="dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Avg Score</h3>
+                        <p id="statAvg" class="stat-value">--</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Best Streak</h3>
+                        <p id="statStreak" class="stat-value">0 <span class="stat-sub">days</span></p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Toughest Day</h3>
+                        <p id="statWorstDay" class="stat-value">--</p>
+                    </div>
+                </div>
+
+                <div class="card chart-card">
+                    <h2>Mood Trends</h2>
+                    <canvas id="moodChart"></canvas>
+                </div>
+
+                <div class="card common-emotions-card">
+                    <h2>Frequent Emotions</h2>
+                    <div id="commonEmotions" class="emotion-list">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
